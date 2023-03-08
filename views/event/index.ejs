@@ -1,0 +1,11 @@
+<%- include('../partials/header'); %>
+
+  <%- include('../partials/sideBar',{email:email,user:user,imgPath:imgPath}); %>
+    <main class="container">
+      <% post.forEach(element=>
+        { %>
+        <%- include('../partials/card',{data: element}); %>
+          <% }) %>
+    </main>
+    <%- include('../partials/footer'); %>
+     

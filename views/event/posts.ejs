@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <% posts.forEach(post => { %>
+     
+       <div>
+        <h1> <%=  typeof post["title"] != 'undefined' ? post["title"] : '' %></h1>
+        <p>  <%=  typeof post["des"] != 'undefined' ? post["des"] : '' %></p>
+        <p>  <%=  typeof post["date"] != 'undefined' ? post["date"] : '' %></p>
+        <p>  <%=  typeof post["_id"] != 'undefined' ? post["_id"] : '' %></p>
+        <p>userId:  <%=  typeof post["userId"]["_id"] != 'undefined' ? post["userId"]["_id"] : '' %></p>
+        <a href="/post/delet/<%= post["_id"] %>">delet</a>
+        
+       </div>
+    <% }) %>
+</body>
+</html>

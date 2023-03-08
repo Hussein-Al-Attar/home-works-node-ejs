@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+   <h1>profile</h1>
+   <img width="50px" src="<%= typeof user["imgPath"] !="undefined"?user["imgPath"]:"/public/img/user.png"  %>" >
+   <br>
+   <h1>user name : <%= typeof user["username"] !="undefined"?user["username"]:"not have"  %></h1>
+   <br>
+   <h1>des : <%= typeof user["des"] !="undefined"?user["des"]:"not have"  %></h1>
+   <br>
+   <h1>location : <%= typeof user["location"] !="undefined"?user["location"]:"not have"  %></h1>
+   <br>
+   <h1>type of server : <%= typeof user["TypeS"] !="undefined"?user["TypeS"]:"not have"  %></h1>
+   <br>
+   <h1>phone : <%= typeof user["phone"] !="undefined"?user["phone"]:"not have"  %></h1>
+
+<% if (admin == true) { %>
+    <a href="/profile/editProfile">editProfile</a>
+<% } %>
+   <% posts.forEach(post => { %>
+    <div>
+     <hr>
+     <img width="50px" src="<%= typeof post["imgPath"] !="undefined"?"/public"+post["imgPath"]:"/public/img/user.png"  %>" >
+     <h1> <%=  typeof post["title"] != 'undefined' ? post["title"] : '' %></h1>
+     <p>  <%=  typeof post["des"] != 'undefined' ? post["des"] : '' %></p>
+     <p>  <%=  typeof post["date"] != 'undefined' ? post["date"] : '' %></p>
+     <p>  <%=  typeof post["_id"] != 'undefined' ? post["_id"] : '' %></p>
+     <p>userId:  <%=  typeof post["userId"]["_id"] != 'undefined' ? post["userId"]["_id"] : '' %></p>
+     <% if (admin == true) { %>
+        <a href="/post/delet/<%= post["_id"] %>">delet</a> 
+    <% } %>
+    </div>
+ <% }) %>
+</body>
+</html>

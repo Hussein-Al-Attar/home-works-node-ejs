@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit Profile</title>
+</head>
+<body>
+    <h1>edit Profile</h1>
+    <form action="http://localhost:3001/profile/editProfile" method="POST">
+        <h4><%= typeof error != 'undefined' ? error : '' %></h4>
+        <label for="username">username</label>
+        <input type="text" placeholder="user name" id="username" name="username" />
+        <br />
+        <label for="descption">descption</label>
+        <input
+          type="text"
+          placeholder="descption"
+          id="descption"
+          name="descption"
+        /><br />
+        <label for="phone">phone</label>
+        <input
+          type="number"
+          placeholder="phone"
+          id="phone"
+          name="phone"
+        /><br />
+        <label for="location">location</label>
+        <input
+          type="location"
+          placeholder="location"
+          id="location"
+          name="location"
+        /><br />
+        <label for="TypeS">Type Servise</label>
+        <input
+          type="text"
+          placeholder="Type Servise"
+          id="TypeS"
+          name="TypeS"
+        /><br />
+  
+        <button type="submit">save</button>
+      </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+<body>
+    <form action="http://localhost:3001/search/all/" method="get" >
+         <h4><%=  typeof error != 'undefined' ? error : '' %></h4>
+        <label for="search">search</label>
+        <input type="search" placeholder="search" id="search" name="s">
+        <label for="ts">Type of servise</label>
+        <input type="radio" placeholder="Type of servise" value="ts" id="ts" name="st" checked>
+        <label for="username">username</label>
+        <input type="radio" placeholder="username" value="us" id="username" name="st" >
+        <button type="submit" >search</button>
+     
+    </form>
+    <% users.forEach(user => { %>
+     
+        <div>
+         <h1> <%=  typeof user["username"] != 'undefined' ? user["username"] : '' %></h1>
+         <p>  <%=  typeof user["phone"] != 'undefined' ? user["phone"] : '' %></p>
+         <p>  <%=  typeof user["TypeS"] != 'undefined' ? user["TypeS"] : '' %></p>
+         <p>  <%=  typeof user["des"] != 'undefined' ? user["des"] : '' %></p>
+         <hr>
+        </div>
+     <% }) %>
+</body>
+</html>
